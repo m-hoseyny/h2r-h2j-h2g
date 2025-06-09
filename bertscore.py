@@ -21,7 +21,7 @@ def get_passage_msv2(pid):
 
 def load_passages_msv1():
     passage_v1 = {}
-    with open('/mnt/data/mohammad-hosseini/datasets/collection.tsv') as f:
+    with open('datasets/collection.tsv') as f:
         for line in tqdm.tqdm(f, desc="Loading passages v1"):
             did, passage = line.strip().split('\t')
             passage_v1[did] = passage

@@ -79,12 +79,6 @@ def get_passage_msv2(pid):
         return document["passage"]
 
 
-'''
-python pairwise_judge.py -q /mnt/data/mohammad-hosseini/datasets/dl22.dedup.qrels \
-    -g generated_queries_outputs/DL22_D2Q_ZS_responses_full_20250510_llama3.2:3.2b.json \
-    -o pairwise_judge_outputs/dl22_pairwise_judge_pd.json \
-    -m qwen3:8b
-'''
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Calculate BERTScore between two qrels files')

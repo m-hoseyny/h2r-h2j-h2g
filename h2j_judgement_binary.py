@@ -12,7 +12,7 @@ client = openai.OpenAI(api_key='ollama',
                            base_url='http://localhost:11434/v1')
 
 def main(dataset, model_name):
-    BASEPAHT = '/mnt/data/mohammad-hosseini/datasets'
+    BASEPAHT = './'
     for year in dataset:
         print('Going to process year ', year)
         queries = {}

@@ -60,10 +60,10 @@ def get_query_mappings(qrel):
         "dl23-passage": "dl23",
         "robust04": "robust04",
         "robust05": "robust05",
-        "/mnt/data/mohammad-hosseini/datasets/dl22.dedup.qrels": "dl22",
-        "/mnt/data/mohammad-hosseini/datasets/dl21.dedup.qrels": "dl21",
-        "/mnt/data/mohammad-hosseini/datasets/qrels.dl19-passage.txt": "dl19-passage",
-        "/mnt/data/mohammad-hosseini/datasets/qrels.dl20-passage.txt": "dl20-passage",
+        "datasets/qrels.dl22-passage.txt": "dl22",
+        "datasets/qrels.dl21-passage.txt": "dl21",
+        "datasets/qrels.dl19-passage.txt": "dl19-passage",
+        "datasets/qrels.dl20-passage.txt": "dl20-passage",
     }
     if qrel not in topic_mapping:
         raise ValueError(f"Invalid value for qrel: {qrel}")
@@ -104,7 +104,7 @@ def generate_holes(qrel, judge_cat=[0, 1, 2, 3], exception_qid=[]):
 
 
 def get_qrel_path(qrel_info):
-    if '/mnt/data/' in qrel_info:
+    if 'datasets/' in qrel_info:
         return qrel_info
     elif not os.path.exists(qrel_info):
         return get_qrels_file(qrel_info)
