@@ -2,7 +2,11 @@
 
 This repo contains the code for the paper "Failing Forward: Understanding Query Failure in Retrieval, Judgment, and Generatio".
 
-![Venn Diagram](hard_queries_overlap.png)
+### Qwen3:8b Hard to Judge
+![Hard to Judge based on Qwen3.2](hard_queries_overlap.png)
+
+### LLaMa3.2:latest Hard to Judge
+![Hard to Judge based on LLaMa3.2](llama-h2j.png)
 
 ## Metrics Explained
 
@@ -146,8 +150,8 @@ With this script we can find the hard to judge queries for a given run file.
 ### Binary Hard to Judge
 ```bash
 python h2j_judgement_binary.py \
---dataset [dl21, dl22] \
---model_name qwen3:8b
+--dataset 22 \
+--model_name llama3.2:latest
 ```
 Output directory: binary_judge
 
@@ -163,4 +167,4 @@ python h2j_umbrela_like_llm_judge.py \
 
 Output directroy: modified_qrels
 
-
+LLaMa3.2 Confusion matrixes are available in [here](conf_matrix/readme.md)

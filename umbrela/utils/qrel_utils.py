@@ -153,7 +153,7 @@ def get_passage_msv2(pid):
     assert string1 == "msmarco" and string2 == "passage"
 
     with open(
-        f"msmarco_v2_passage/msmarco_passage_{bundlenum}", "rt", encoding="utf8"
+        f"/mnt/data/mohammad-hosseini/anserini/msmarco_v2_passage/msmarco_passage_{bundlenum}", "rt", encoding="utf8"
     ) as in_fh:
         in_fh.seek(int(position))
         json_string = in_fh.readline()

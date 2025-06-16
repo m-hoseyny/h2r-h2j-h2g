@@ -11,9 +11,12 @@ import tqdm
 client = openai.OpenAI(api_key='ollama', 
                            base_url='http://localhost:11434/v1')
 
+
+
+
 def main(dataset, model_name):
-    BASEPAHT = './'
-    for year in dataset:
+    BASEPAHT = './datasets'
+    for year in [dataset]:
         print('Going to process year ', year)
         queries = {}
         for line in tqdm.tqdm(open(f'{BASEPAHT}/test20{year}-queries-filterd.tsv', 'r').readlines(), desc=f'Loading queries for year {year}'):
@@ -71,12 +74,12 @@ def main(dataset, model_name):
             else:
                 rate = 0
             # print('binary',model_name,year, qid, docid, rate)
-            output.write(f"binary_judge/h2j_binary_{model_name}_{year}_{qid} 0 {docid} {rate}\n")
+            output.write(f"{qid} 0 {docid} {rate}\n")
     output.close()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process some integers.')
-    parser.add_argument('--dataset', type=list, default=['20','21', '22','19'], help='name the collections')
+    parser.add_argument('--dataset', type=str, default='20', help='name of the collection')
     parser.add_argument('--model_name', type=str, default='qwen3:8b', help='Model name to use')
     os.makedirs('binary_judge', exist_ok=True)
     args = parser.parse_args()
