@@ -80,6 +80,13 @@ def calculate_bert_score(qrels, ref_passages, gp, output):
     return df
 
 
+def load_passages_qrels(args):
+    ref_passages = {}
+    with open(args.p, 'r') as f:
+        for line in f:
+            did, passage = line.strip().split('\t')
+            ref_passages[did] = passage
+    return ref_passages
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Calculate BERTScore between two qrels files')
@@ -98,8 +105,7 @@ if __name__ == "__main__":
     
     if os.path.exists(passages_qrels_path):
         print('[oooo] Loading passages for qrels from pickle file')
-        with open(passages_qrels_path, 'rb') as f:
-            ref_passages = pickle.load(f)
+        ref_passages = load_passages_qrels(args)
     else:
         print('[xxxx] Loading passages for qrels from msv2')
         for did in tqdm.tqdm(ref_dids, desc="Loading passages for qrels"):
@@ -108,8 +114,9 @@ if __name__ == "__main__":
             else:
                 ref_passages[did] = get_passage_msv2(did)
         
-        with open(passages_qrels_path, 'wb') as f:
-            pickle.dump(ref_passages, f)
+        with open(passages_qrels_path, 'w') as f:
+            for did, passage in ref_passages.items():
+                f.write(f'{did}\t{passage}\n')
             
     generated_passages = pd.read_json(args.gp, lines=True)
     generated_passages['query_id'] = generated_passages['query_id'].astype(int)

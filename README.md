@@ -2,11 +2,10 @@
 
 This repo contains the code for the paper "Failing Forward: Understanding Query Failure in Retrieval, Judgment, and Generatio".
 
-### Qwen3:8b Hard to Judge
-![Hard to Judge based on Qwen3.2](hard_queries_overlap.png)
-
-### LLaMa3.2:latest Hard to Judge
-![Hard to Judge based on LLaMa3.2](llama-h2j.png)
+## Results for two main LLMs for Judgement
+| Qwen3:8b             |  LlaMa3.2:latest |
+:-------------------------:|:-------------------------:
+![Hard to Judge based on Qwen3.2](hard_queries_overlap-low.png) | ![Hard to Judge based on LLaMa3.2](llama-h2j-low.png)
 
 ## Metrics Explained
 
@@ -95,9 +94,10 @@ paper_repo/
 pip install -r requirements.txt
 ```
 
-## Hard to Retrieve
+## [Hard to Retrieve](hard_to_retrieve/readme.md)
 
 With this script we can find the hard to retrieve queries for a given run file.
+It returns the quantile threshold for each dataset and save hard queries for each dataset (results below)
 
 ```bash
 python h2r_hard_queries.py \
@@ -120,7 +120,7 @@ The table below shows the retrieval performance across different datasets. The l
 | DL22 | BM25 | 0.108 | 0.189 |
 | DL22 | DistilBERT-TAS-B | 0.140 | 0.242 |
 
-## Hard to Generate
+## [Hard to Generate](generate_passage/readme.md)
 
 With this script we can find the hard to generate queries for a given run file.
 
@@ -131,20 +131,33 @@ python h2g_generate_passage.py \
 --model qwen3:8b
 ```
 
+To calculate the bertscore to produce the result below you can run this code:
+```bash
+python bertscore.py \
+    -q datasets/qrels.dl21-passage.txt \
+    -g h2g_generate_passage_outputs/h2g_generate_passage_dl21.json \
+    -o bert_score_outputs/bert_score_dl21.json \
+    -p datasets/qrels_text.dl21
+```
+
 
 The table below shows the BERT score F1 values 0.3 quantile threshold for generated content across different datasets using the Qwen3 model:
 
-| Dataset | BERT Score F1 (0.3 Quantile) |
-|---------|-----------------------------|
-| DL19 | 0.828 |
-| DL20 | 0.822 |
-| DL21 | 0.834 |
-| DL22 | 0.824 |
+| Dataset | Model | BERT Score F1 (0.3 Quantile) |
+|---------|-------|-----------------------------|
+| DL19 | Qwen3.2:8B | 0.825 |
+| DL20 | Qwen3.2:8B | 0.825 |
+| DL21 | Qwen3.2:8B | 0.826 |
+| DL22 | Qwen3.2:8B | 0.818 |
+| DL19 | LLaMa3.2:latest | 0.833 |
+| DL20 | LLaMa3.2:latest | 0.832 |
+| DL21 | LLaMa3.2:latest | 0.838 |
+| DL22 | LLaMa3.2:latest | 0.828 |
 
 
-## Hard to Judge
+## [Hard to Judge](conf_matrix/readme.md)
 
-With this script we can find the hard to judge queries for a given run file.
+With this script we can find the hard to judge queries for a given qrels file.
 
 
 ### Binary Hard to Judge
@@ -154,8 +167,6 @@ python h2j_judgement_binary.py \
 --model_name llama3.2:latest
 ```
 Output directory: binary_judge
-
-
 ### Umbrela Like Hard to Judge
 ```bash
 python h2j_umbrela_like_llm_judge.py \
@@ -165,6 +176,11 @@ python h2j_umbrela_like_llm_judge.py \
 --base_url http://localhost:11434/v1
 ```
 
-Output directroy: modified_qrels
+
+**To find the hard to judge queries you can run this code:**
+```bash
+python h2j_finder.py
+```
+
 
 LLaMa3.2 Confusion matrixes are available in [here](conf_matrix/readme.md)

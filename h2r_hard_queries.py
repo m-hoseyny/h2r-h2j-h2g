@@ -18,6 +18,7 @@ def hard_to_retrieve_finder(run_file_path, qrel_file_path, quantile):
     ndcg_per_query_bm25 = evaluator.get_ndcg(10, per_query=True, removeUnjudged=True)
 
     lower_band_bm25 = ndcg_per_query_bm25.sort_values(['NDCG@10'], ascending=True)['NDCG@10'].quantile(quantile)
+    print('Run file: {} \n Qrel file: {} \n Quantile: {} \n Lower band: {} \n'.format(run_file_path, qrel_file_path, quantile, lower_band_bm25))
     hard_ndcg_per_query_bm25 = ndcg_per_query_bm25[ndcg_per_query_bm25['NDCG@10'] < lower_band_bm25]
     hard_ndcg_per_query_bm25 = hard_ndcg_per_query_bm25.reset_index()
     return hard_ndcg_per_query_bm25
