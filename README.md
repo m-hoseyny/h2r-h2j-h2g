@@ -2,63 +2,10 @@
 
 This repo contains the code for the paper "Failing Forward: Understanding Query Failure in Retrieval, Judgment, and Generatio".
 
-## Results for two main LLMs for Judgement
+## Main Results
 | Qwen3:8b             |  LlaMa3.2:latest |
 :-------------------------:|:-------------------------:
 ![Hard to Judge based on Qwen3.2](hard_queries_overlap-low.png) | ![Hard to Judge based on LLaMa3.2](llama-h2j-low.png)
-
-## Metrics Explained
-
-### NDCG@10
-Normalized Discounted Cumulative Gain at rank 10 (NDCG@10) is a ranking metric that measures the quality of search results. It considers both the relevance of documents and their positions in the result list:
-- Values range from 0.0 to 1.0, with 1.0 being perfect ranking
-- Gives higher weight to relevant documents appearing earlier in the results
-- The @10 indicates that only the top 10 retrieved documents are considered
-- Used in our Hard to Retrieve analysis to evaluate retrieval effectiveness
-
-### Quantile Threshold
-A statistical measure used to identify hard queries by setting a performance threshold:
-- We use the 0.3 quantile (30th percentile) as our threshold
-- Queries with performance below this threshold are considered "hard"
-- This approach allows us to objectively identify challenging queries across different datasets and models
-- The lower band in our tables represents this 0.3 quantile threshold
-
-### Hard Queries
-Queries that are particularly challenging for systems to process effectively:
-- **Hard to Retrieve (H2R)**: Queries where retrieval systems struggle to find relevant documents (NDCG@10 below the 0.3 quantile threshold)
-- **Hard to Generate (H2G)**: Queries where generative models struggle to produce accurate or relevant responses (BERTScore below the 0.3 quantile threshold with the annotated passage in MSMarco[v1,v2])
-- **Hard to Judge (H2J)**: Queries where determining grading or binary relevance between query and document is challenging for automated systems with human annotations
-
-### BERTScore
-A neural metric for evaluating text generation quality by computing similarity between generated and reference texts:
-- Uses contextual embeddings from BERT to compute similarity
-- F1 scores range from 0.0 to 1.0, with higher values indicating better quality
-
-
-
-## Failure Reasons Analysis
-
-The table below summarizes the key reasons for query failures across the three dimensions we studied:
-
-| Category | Failure Reasons |
-|----------|----------------|
-| **Hard to Judge (H2J)** | • Quantitative data needed<br>• Specific and niche topic<br>• Query unrelated to provided criteria<br>• No relevant passage context |
-| **Hard to Generate (H2G)** | • Up-to-date information needed<br>• Technical accuracy required<br>• Risk of misinformation |
-| **Hard to Retrieve (H2R)** | • Numerical data extraction<br>• Specific product term<br>• Ambiguous subject reference |
-
-### Example Queries and Their Hardness Aspects
-
-The table below shows examples of queries and which aspects make them hard:
-
-| Query ID | Query | Hard to Retrieve (H2R) | Hard to Generate (H2G) | Hard to Judge (H2J) |
-|----------|-------|------------------------|------------------------|---------------------|
-| 390360 | ia suffix meaning | DistilBert | Llama + Qwen | Graded |
-| 673670 | what is a aim | BM25 | LLama | Graded |
-| 555530 | what are best foods to lower cholesterol | Bm25 | Qwen | Graded |
-| 443396 | lps laws definition | hard in binary all | LLaMa + Qwen | Binary |
-| 121171 | define etruscans | DistilBert | LLaMa + Qwen | Binary |
-| 1108651 | what the best way to get clothes white | BM25 | LLaMa | Binary |
-| 1129560 | accounting definition of building improvements | Bm25 | Qwen | Binary |
 
 ## Repository Structure
 
@@ -87,6 +34,45 @@ paper_repo/
     ├── prompts/               # Prompts for LLM evaluation
     └── utils/                 # Utility functions for Umbrela
 ```
+ 
+### Quantile Threshold
+A statistical measure used to identify hard queries by setting a performance threshold:
+- We use the 0.3 quantile (30th percentile) as our threshold
+- Queries with performance below this threshold are considered "hard"
+- This approach allows us to objectively identify challenging queries across different datasets and models
+- The lower band in our tables represents this 0.3 quantile threshold
+- For each tasks, you can find the script to claculate the quantile
+
+
+
+## [Failure Reasons Analysis](reasoning_by_llm/)
+
+The table below summarizes the key reasons for query failures across the three dimensions we studied:
+
+| Category | Failure Reasons |
+|----------|----------------|
+| **Hard to Judge (H2J)** | • Quantitative data needed<br>• Specific and niche topic<br>• Query unrelated to provided criteria<br>• No relevant passage context |
+| **Hard to Generate (H2G)** | • Up-to-date information needed<br>• Technical accuracy required<br>• Risk of misinformation |
+| **Hard to Retrieve (H2R)** | • Numerical data extraction<br>• Specific product term<br>• Ambiguous subject reference |
+
+You can find the results here: ```reasoning_by_llm/```
+
+### Example Queries and Their Hardness Aspects
+
+The table below shows examples of queries and which aspects make them hard:
+
+| Query ID | Query | Hard to Retrieve (H2R) | Hard to Generate (H2G) | Hard to Judge (H2J) |
+|----------|-------|------------------------|------------------------|---------------------|
+| 390360 | ia suffix meaning | DistilBert | Llama + Qwen | Graded |
+| 673670 | what is a aim | BM25 | LLama | Graded |
+| 555530 | what are best foods to lower cholesterol | Bm25 | Qwen | Graded |
+| 443396 | lps laws definition | hard in binary all | LLaMa + Qwen | Binary |
+| 121171 | define etruscans | DistilBert | LLaMa + Qwen | Binary |
+| 1108651 | what the best way to get clothes white | BM25 | LLaMa | Binary |
+| 1129560 | accounting definition of building improvements | Bm25 | Qwen | Binary |
+
+
+## In this section you can reproduce the results
 
 ## Setup
 
@@ -96,8 +82,11 @@ pip install -r requirements.txt
 
 ## [Hard to Retrieve](hard_to_retrieve/readme.md)
 
+Queries where retrieval systems struggle to find relevant documents (NDCG@10 below the 0.3 quantile threshold)
+
 With this script we can find the hard to retrieve queries for a given run file.
 It returns the quantile threshold for each dataset and save hard queries for each dataset (results below)
+
 
 ```bash
 python h2r_hard_queries.py \
@@ -122,7 +111,9 @@ The table below shows the retrieval performance across different datasets. The l
 
 ## [Hard to Generate](generate_passage/readme.md)
 
-With this script we can find the hard to generate queries for a given run file.
+Queries where generative models struggle to produce accurate or relevant responses (BERTScore below the 0.3 quantile threshold with the annotated passage in MSMarco[v1,v2])
+
+With this script we can find the hard to generate queries for a given query file.
 
 ```bash
 python h2g_generate_passage.py \
@@ -131,7 +122,7 @@ python h2g_generate_passage.py \
 --model qwen3:8b
 ```
 
-To calculate the bertscore to produce the result below you can run this code:
+To calculate the `bertscore` to produce the result below you can run this code:
 ```bash
 python bertscore.py \
     -q datasets/qrels.dl21-passage.txt \
@@ -154,8 +145,11 @@ The table below shows the BERT score F1 values 0.3 quantile threshold for genera
 | DL21 | LLaMa3.2:latest | 0.838 |
 | DL22 | LLaMa3.2:latest | 0.828 |
 
+You can find the results here: ```bert_score_outputs/```
 
 ## [Hard to Judge](conf_matrix/readme.md)
+
+Queries where determining grading or binary relevance between query and document is challenging for automated systems with human annotations
 
 With this script we can find the hard to judge queries for a given qrels file.
 
@@ -166,7 +160,7 @@ python h2j_judgement_binary.py \
 --dataset 22 \
 --model_name llama3.2:latest
 ```
-Output directory: binary_judge
+Output directory: ```binary_judge/```
 ### Umbrela Like Hard to Judge
 ```bash
 python h2j_umbrela_like_llm_judge.py \
@@ -175,7 +169,7 @@ python h2j_umbrela_like_llm_judge.py \
 --prompt_type bing \
 --base_url http://localhost:11434/v1
 ```
-
+Output directory: ```modified_qrels/```
 
 **To find the hard to judge queries you can run this code:**
 ```bash
