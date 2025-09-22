@@ -3,7 +3,7 @@
 This repo contains the code for the paper "Failing Forward: Understanding Query Failure in Retrieval, Judgment, and Generatio".
 
 ## Main Results
-| Qwen3:8b             |  LlaMa3.2:latest |
+| Qwen3:8b             |  LlaMa3.2:3b |
 :-------------------------:|:-------------------------:
 ![Hard to Judge based on Qwen3.2](hard_queries_overlap-low.png) | ![Hard to Judge based on LLaMa3.2](llama-h2j-low.png)
 
@@ -142,10 +142,10 @@ The table below shows the BERT score F1 values 0.3 quantile threshold for genera
 | DL20 | Qwen3.2:8B | 0.825 |
 | DL21 | Qwen3.2:8B | 0.826 |
 | DL22 | Qwen3.2:8B | 0.818 |
-| DL19 | LLaMa3.2:latest | 0.833 |
-| DL20 | LLaMa3.2:latest | 0.832 |
-| DL21 | LLaMa3.2:latest | 0.838 |
-| DL22 | LLaMa3.2:latest | 0.828 |
+| DL19 | LLaMa3.2:3b | 0.833 |
+| DL20 | LLaMa3.2:3b | 0.832 |
+| DL21 | LLaMa3.2:3b | 0.838 |
+| DL22 | LLaMa3.2:3b | 0.828 |
 
 You can find the results here: ```bert_score_outputs/```
 
@@ -160,7 +160,7 @@ With this script we can find the hard to judge queries for a given qrels file.
 ```bash
 python h2j_judgement_binary.py \
 --dataset 22 \
---model_name llama3.2:latest
+--model_name llama3.2:3b
 ```
 Output directory: ```binary_judge/```
 ### Umbrela Like Hard to Judge
