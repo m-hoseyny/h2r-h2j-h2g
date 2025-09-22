@@ -74,7 +74,7 @@ The table below shows examples of queries and which aspects make them hard:
 | 1129560 | accounting definition of building improvements | Bm25 | Qwen | Binary |
 
 
-## In this section you can reproduce the results
+# In this section you can reproduce the results
 
 ## Setup
 
@@ -182,12 +182,13 @@ python h2j_finder.py
 LLaMa3.2 Confusion matrixes are available in [here](conf_matrix/readme.md)
 
 
-## Human Annotation
+### [Human Annotation](human_annotation/)
 
 To evaluate the reasons that are tagged by LLMs we use human annotation.
 
-### Binary Hard to Judge
+#### Binary Hard to Judge
 ```bash
 python analyze_human_judgements.py 
 ```
 Output directory: ```human_judgements/```
+
