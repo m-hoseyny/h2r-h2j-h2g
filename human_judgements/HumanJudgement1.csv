@@ -1,0 +1,101 @@
+combination, ,query,dataset,one_shot_labels,up-to-date information needed,technical accuracy required,risk of misinformation,numerical data extraction,specific product term,ambiguous subject reference,quantitative data needed,Specific and niche topic,Query unrelated to provided criteria,No relevant passage context,active_reasons
+h2g,1106979,define pareto chart in statistics,dl20_unicoil_bertscore_umbrela_0.3,"[0, 1, 1, 0, 1, 0, 0, 1, 0, 0]",0,1,1,0,1,0,0,1,0,0,"Technical accuracy, Risk of misinformation, Specific product term, Niche topic"
+,,ANNOTATION:,,,,TRUE,TRUE,,TRUE,,,TRUE,,,
+h2g,190623,for what is david w. taylor known,dl21_bm25_bertscore_umbrela_0.3,"[0, 0, 1, 0, 0, 1, 0, 1, 0, 0]",0,0,1,0,0,1,0,1,0,0,"Risk of misinformation, Subject ambiguity, Niche topic"
+,,ANNOTATION:,,,,,TRUE,,,TRUE,,TRUE,,,
+h2r,935353,when and where did the battle of manassas take place,dl21_distilbert-tas-b_bertscore_umbrela_0.3,"[0, 1, 0, 1, 0, 0, 1, 0, 0, 0]",0,1,0,1,0,0,1,0,0,0,"Technical accuracy, Numerical data extraction, Quantitative data"
+,,ANNOTATION:,,,,,,,,,,TRUE,,TRUE,
+h2j,493490,schizandra berry benefits,dl21_unicoil_binary_umbrela_0.3,"[1, 1, 1, 1, 1, 0, 1, 1, 0, 0]",1,1,1,1,1,0,1,1,0,0,"Up-to-date information, Technical accuracy, Risk of misinformation, Numerical data extraction, Specific product term, Quantitative data, Niche topic"
+,,ANNOTATION:,,,TRUE,TRUE,TRUE,,TRUE,,,TRUE,,,
+h2r,337656,how old was the elephant man when he died,dl21_distilbert-tas-b_binary_umbrela_0.3,"[0, 1, 1, 1, 0, 0, 1, 1, 0, 0]",0,1,1,1,0,0,1,1,0,0,"Technical accuracy, Risk of misinformation, Numerical data extraction, Quantitative data, Niche topic"
+,,ANNOTATION:,,,,TRUE,TRUE,TRUE,,,,TRUE,,,
+h2r,2055480,how many incidents of corneal abrasion,dl22_distilbert-tas-b_bertscore_umbrela_0.3,"[1, 1, 1, 1, 0, 0, 1, 1, 0, 1]",1,1,1,1,0,0,1,1,0,1,"Up-to-date information, Technical accuracy, Risk of misinformation, Numerical data extraction, Quantitative data, Niche topic, Missing context"
+,,ANNOTATION:,,,FALSE,FALSE,TRUE,TRUE,,,,TRUE,,TRUE,
+h2r,1107704,what was the main benefit of a single european currency?,dl21_unicoil_binary_umbrela_0.3,"[0, 0, 1, 0, 0, 0, 0, 1, 0, 0]",0,0,1,0,0,0,0,1,0,0,"Risk of misinformation, Niche topic"
+,,ANNOTATION:,,,,,TRUE,,,,,,,,
+h2j,1114819,what is durable medical equipment consist of,dl19_bm25_binary_umbrela_0.3,"[1, 1, 1, 0, 1, 0, 0, 1, 0, 0]",1,1,1,0,1,0,0,1,0,0,"Up-to-date information, Technical accuracy, Risk of misinformation, Specific product term, Niche topic"
+,,ANNOTATION:,,,TRUE,TRUE,,,TRUE,,,TRUE,,,
+h2g,390360,ia suffix meaning,dl20_unicoil_bertscore_umbrela_0.3,"[0, 1, 1, 0, 0, 0, 0, 1, 0, 0]",0,1,1,0,0,0,0,1,0,0,"Technical accuracy, Risk of misinformation, Niche topic"
+,,ANNOTATION:,,,,,TRUE,,,TRUE,,,,TRUE,
+h2r,2037609,define unstop,dl22_unicoil_bertscore_umbrela_0.3,"[0, 1, 1, 0, 0, 1, 0, 1, 0, 0]",0,1,1,0,0,1,0,1,0,0,"Technical accuracy, Risk of misinformation, Subject ambiguity, Niche topic"
+,,ANNOTATION:,,,,,TRUE,,,TRUE,,TRUE,,TRUE,
+h2r,2036182,number of instagram post about unicorn frappuccino,dl22_distilbert-tas-b_bertscore_umbrela_0.3,"[1, 1, 1, 1, 1, 0, 1, 1, 0, 0]",1,1,1,1,1,0,1,1,0,0,"Up-to-date information, Technical accuracy, Risk of misinformation, Numerical data extraction, Specific product term, Quantitative data, Niche topic"
+,,ANNOTATION:,,,TRUE,TRUE,TRUE,TRUE,TRUE,,TRUE,TRUE,,,
+h2r,2037924,what can you do with heart of palm,dl22_unicoil_bertscore_umbrela_0.3,"[0, 1, 1, 1, 1, 0, 1, 1, 0, 0]",0,1,1,1,1,0,1,1,0,0,"Technical accuracy, Risk of misinformation, Numerical data extraction, Specific product term, Quantitative data, Niche topic"
+,,ANNOTATION:,,,,TRUE,TRUE,,TRUE,,,TRUE,,TRUE,
+h2r,2039908,what is the name of a baby nurse,dl22_unicoil_bertscore_umbrela_0.3,"[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",0,0,0,0,0,0,0,0,0,0,None
+,,ANNOTATION:,,,,,,,TRUE,TRUE,,,,TRUE,
+h2r,877809,what metal are hip replacements made of,dl20_unicoil_bertscore_umbrela_0.3,"[1, 1, 1, 0, 1, 0, 0, 1, 0, 0]",1,1,1,0,1,0,0,1,0,0,"Up-to-date information, Technical accuracy, Risk of misinformation, Specific product term, Niche topic"
+,,ANNOTATION:,,,TRUE,TRUE,TRUE,,TRUE,,,TRUE,,,
+h2g,2049687,what vaccination should u give show piglets,dl22_unicoil_bertscore_umbrela_0.3,"[1, 1, 1, 0, 1, 1, 0, 1, 0, 1]",1,1,1,0,1,1,0,1,0,1,"Up-to-date information, Technical accuracy, Risk of misinformation, Specific product term, Subject ambiguity, Niche topic, Missing context"
+,,ANNOTATION:,,,TRUE,FALSE,,,,TRUE,,FALSE,,FALSE,
+h2r,405717,is cdg airport in main paris,dl19_bm25_bertscore_umbrela_0.3,"[0, 1, 1, 0, 0, 0, 0, 0, 0, 0]",0,1,1,0,0,0,0,0,0,0,"Technical accuracy, Risk of misinformation"
+,,ANNOTATION:,,,,,TRUE,,,,,,,,
+h2r,1071750,why is pete rose banned from hall of fame,dl20_unicoil_binary_umbrela_0.3,"[0, 1, 1, 0, 1, 0, 0, 1, 0, 0]",0,1,1,0,1,0,0,1,0,0,"Technical accuracy, Risk of misinformation, Specific product term, Niche topic"
+,,ANNOTATION:,,,,,TRUE,,,,,TRUE,,FALSE,
+h2g,540006,was friedrich nietzsche an atheist,dl21_bm25_bertscore_umbrela_0.3,"[0, 1, 1, 0, 0, 0, 0, 1, 0, 0]",0,1,1,0,0,0,0,1,0,0,"Technical accuracy, Risk of misinformation, Niche topic"
+,,ANNOTATION:,,,,TRUE,TRUE,,TRUE,,,TRUE,,,
+h2r,935964,when are whales most active for whale watching in massachusetts,dl21_bm25_binary_umbrela_0.3,"[1, 1, 1, 1, 0, 0, 1, 1, 0, 1]",1,1,1,1,0,0,1,1,0,1,"Up-to-date information, Technical accuracy, Risk of misinformation, Numerical data extraction, Quantitative data, Niche topic, Missing context"
+,,ANNOTATION:,,,TRUE,,,TRUE,,,TRUE,TRUE,,,
+h2g,832573,what is the methylmalon a. c test,dl21_distilbert-tas-b_bertscore_umbrela_0.3,"[1, 1, 1, 0, 1, 0, 0, 1, 0, 0]",1,1,1,0,1,0,0,1,0,0,"Up-to-date information, Technical accuracy, Risk of misinformation, Specific product term, Niche topic"
+,,ANNOTATION:,,,,TRUE,TRUE,,TRUE,,,TRUE,,,
+h2j,2031726,yeast infection md,dl22_bm25_binary_umbrela_0.3,"[0, 1, 1, 0, 1, 1, 0, 1, 0, 0]",0,1,1,0,1,1,0,1,0,0,"Technical accuracy, Risk of misinformation, Specific product term, Subject ambiguity, Niche topic"
+,,ANNOTATION:,,,,TRUE,TRUE,,TRUE,TRUE,,TRUE,,,
+h2g,688007,what is a kanima,dl21_bm25_bertscore_umbrela_0.3,"[0, 1, 1, 0, 0, 1, 0, 1, 0, 0]",0,1,1,0,0,1,0,1,0,0,"Technical accuracy, Risk of misinformation, Subject ambiguity, Niche topic"
+,,ANNOTATION:,,,,TRUE,TRUE,,TRUE,FALSE,,,,,
+h2j,2002533,how much average cost to plan a 8' tree?,dl22_bm25_binary_umbrela_0.3,"[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]",1,1,1,1,1,1,1,1,1,1,"Up-to-date information, Technical accuracy, Risk of misinformation, Numerical data extraction, Specific product term, Subject ambiguity, Quantitative data, Niche topic, Unrelated query, Missing context"
+,,ANNOTATION:,,,,,,TRUE,TRUE,,TRUE,,,,
+h2g,2056323,how does magic leap optics work,dl22_unicoil_bertscore_umbrela_0.3,"[1, 1, 1, 1, 1, 0, 1, 1, 0, 1]",1,1,1,1,1,0,1,1,0,1,"Up-to-date information, Technical accuracy, Risk of misinformation, Numerical data extraction, Specific product term, Quantitative data, Niche topic, Missing context"
+,,ANNOTATION:,,,,TRUE,TRUE,TRUE,TRUE,,TRUE,TRUE,,TRUE,
+h2r,2016333,how to make ground beef empanadas,dl22_distilbert-tas-b_binary_umbrela_0.3,"[0, 1, 1, 0, 1, 0, 0, 1, 0, 0]",0,1,1,0,1,0,0,1,0,0,"Technical accuracy, Risk of misinformation, Specific product term, Niche topic"
+,,ANNOTATION:,,,,,,,TRUE,,,TRUE,,,
+h2r,2026558,what do you call someone who writes biographies?,dl22_distilbert-tas-b_bertscore_umbrela_0.3,"[0, 1, 1, 0, 1, 0, 0, 1, 0, 0]",0,1,1,0,1,0,0,1,0,0,"Technical accuracy, Risk of misinformation, Specific product term, Niche topic"
+,,ANNOTATION:,,,TRUE,,,,,,,,,,
+h2r,1113437,what is physical description of spruce,dl19_distilbert-tas-b_bertscore_umbrela_0.3,"[0, 1, 0, 0, 0, 0, 0, 0, 0, 0]",0,1,0,0,0,0,0,0,0,0,Technical accuracy
+,,ANNOTATION:,,,,TRUE,TRUE,,,,,TRUE,,,
+h2g,405163,is caffeine an narcotic,dl20_unicoil_bertscore_umbrela_0.3,"[1, 1, 1, 0, 0, 0, 0, 1, 0, 0]",1,1,1,0,0,0,0,1,0,0,"Up-to-date information, Technical accuracy, Risk of misinformation, Niche topic"
+,,ANNOTATION:,,,TRUE,TRUE,TRUE,,TRUE,,,TRUE,,,
+h2g,1051399,who sings monk theme song,dl20_bm25_bertscore_umbrela_0.3,"[0, 0, 1, 0, 0, 0, 0, 1, 0, 0]",0,0,1,0,0,0,0,1,0,0,"Risk of misinformation, Niche topic"
+,,ANNOTATION:,,,,,TRUE,,,,,,,,
+h2j,997622,where is the show shameless filmed,dl20_unicoil_bertscore_umbrela_0.3,"[0, 0, 1, 0, 0, 0, 0, 1, 0, 0]",0,0,1,0,0,0,0,1,0,0,"Risk of misinformation, Niche topic"
+,,ANNOTATION:,,,,,TRUE,,,,,TRUE,,TRUE,
+h2r,2006211,what does auslan interpreted performance mean,dl22_unicoil_bertscore_umbrela_0.3,"[0, 1, 1, 0, 0, 0, 0, 1, 0, 0]",0,1,1,0,0,0,0,1,0,0,"Technical accuracy, Risk of misinformation, Niche topic"
+,,ANNOTATION:,,,,TRUE,TRUE,,,,,TRUE,,FALSE,
+h2r,2049417,what is peace in french?,dl22_unicoil_bertscore_umbrela_0.3,"[0, 1, 0, 0, 0, 0, 0, 0, 0, 0]",0,1,0,0,0,0,0,0,0,0,Technical accuracy
+,,ANNOTATION:,,,,TRUE,,,TRUE,,,,,TRUE,
+h2j,2027497,how often should you take your toddler to the potty when potty training,dl22_unicoil_bertscore_umbrela_0.3,"[1, 1, 1, 1, 0, 0, 1, 1, 0, 1]",1,1,1,1,0,0,1,1,0,1,"Up-to-date information, Technical accuracy, Risk of misinformation, Numerical data extraction, Quantitative data, Niche topic, Missing context"
+,,ANNOTATION:,,,TRUE,TRUE,TRUE,TRUE,,,TRUE,TRUE,,TRUE,
+h2g,833860,what is the most popular food in switzerland,dl19_unicoil_bertscore_umbrela_0.3,"[1, 0, 1, 0, 0, 1, 1, 1, 0, 0]",1,0,1,0,0,1,1,1,0,0,"Up-to-date information, Risk of misinformation, Subject ambiguity, Quantitative data, Niche topic"
+,,ANNOTATION:,,,TRUE,,TRUE,,,TRUE,TRUE,TRUE,,,
+h2r,2054355,what does chicken by-product meal add to pet food?,dl22_distilbert-tas-b_binary_umbrela_0.3,"[0, 1, 1, 0, 1, 0, 0, 1, 0, 0]",0,1,1,0,1,0,0,1,0,0,"Technical accuracy, Risk of misinformation, Specific product term, Niche topic"
+,,ANNOTATION:,,,,TRUE,TRUE,,TRUE,,,TRUE,,,
+h2g,673670,what is a alm,dl20_bm25_bertscore_umbrela_0.3,"[0, 1, 1, 0, 0, 1, 0, 1, 0, 0]",0,1,1,0,0,1,0,1,0,0,"Technical accuracy, Risk of misinformation, Subject ambiguity, Niche topic"
+,,ANNOTATION:,,,,,,,,TRUE,,,,TRUE,
+h2j,2055795,collins the good to great,dl22_bm25_bertscore_umbrela_0.3,"[0, 1, 1, 0, 0, 0, 0, 1, 0, 1]",0,1,1,0,0,0,0,1,0,1,"Technical accuracy, Risk of misinformation, Niche topic, Missing context"
+,,ANNOTATION:,,,,TRUE,TRUE,,,TRUE,,TRUE,,TRUE,
+h2r,1112341,what is the daily life of thai people,dl19_unicoil_binary_umbrela_0.3,"[0, 0, 1, 0, 0, 0, 0, 1, 0, 0]",0,0,1,0,0,0,0,1,0,0,"Risk of misinformation, Niche topic"
+,,ANNOTATION:,,,,,TRUE,,,,,,,,
+h2g,2025747,code for history of suicidal statements,dl22_distilbert-tas-b_bertscore_umbrela_0.3,"[0, 1, 0, 0, 0, 0, 0, 1, 0, 0]",0,1,0,0,0,0,0,1,0,0,"Technical accuracy, Niche topic"
+,,ANNOTATION:,,,,TRUE,,,TRUE,,,TRUE,,,
+h2g,2002146,how do you root a yucca plant,dl22_unicoil_bertscore_umbrela_0.3,"[0, 0, 0, 0, 0, 0, 0, 1, 0, 0]",0,0,0,0,0,0,0,1,0,0,Niche topic
+,,ANNOTATION:,,,,,,,,,,TRUE,,TRUE,
+h2r,806694,what is the average pay scale in massachusetts for a sonographer,dl21_distilbert-tas-b_binary_umbrela_0.3,"[1, 1, 1, 1, 0, 0, 1, 1, 0, 1]",1,1,1,1,0,0,1,1,0,1,"Up-to-date information, Technical accuracy, Risk of misinformation, Numerical data extraction, Quantitative data, Niche topic, Missing context"
+,,ANNOTATION:,,,TRUE,FALSE,TRUE,TRUE,,,TRUE,TRUE,,,
+h2j,1124210,tracheids are part of _____.,dl19_bm25_bertscore_umbrela_0.3,"[0, 1, 1, 0, 1, 0, 0, 1, 0, 0]",0,1,1,0,1,0,0,1,0,0,"Technical accuracy, Risk of misinformation, Specific product term, Niche topic"
+,,ANNOTATION:,,,,,TRUE,,TRUE,,,,TRUE,TRUE,
+h2g,2035447,how much money do i need in bangkok,dl22_unicoil_bertscore_umbrela_0.3,"[1, 1, 1, 1, 0, 0, 1, 0, 0, 0]",1,1,1,1,0,0,1,0,0,0,"Up-to-date information, Technical accuracy, Risk of misinformation, Numerical data extraction, Quantitative data"
+,,ANNOTATION:,,,TRUE,TRUE,TRUE,TRUE,,,TRUE,,,,
+h2r,940547,when did rock n roll begin?,dl20_bm25_binary_umbrela_0.3,"[0, 0, 1, 1, 0, 0, 1, 0, 0, 0]",0,0,1,1,0,0,1,0,0,0,"Risk of misinformation, Numerical data extraction, Quantitative data"
+,,ANNOTATION:,,,,,TRUE,TRUE,,,TRUE,,,,
+h2g,596569,what classes do i need to take to go to vet school,dl21_distilbert-tas-b_bertscore_umbrela_0.3,"[1, 1, 1, 1, 0, 0, 1, 1, 0, 1]",1,1,1,1,0,0,1,1,0,1,"Up-to-date information, Technical accuracy, Risk of misinformation, Numerical data extraction, Quantitative data, Niche topic, Missing context"
+,,ANNOTATION:,,,TRUE,TRUE,,TRUE,,,TRUE,,,TRUE,
+h2j,2029260,what is wrong with amazon prime,dl22_distilbert-tas-b_binary_umbrela_0.3,"[1, 1, 1, 1, 1, 0, 1, 1, 0, 1]",1,1,1,1,1,0,1,1,0,1,"Up-to-date information, Technical accuracy, Risk of misinformation, Numerical data extraction, Specific product term, Quantitative data, Niche topic, Missing context"
+,,ANNOTATION:,,,TRUE,TRUE,,,,TRUE,,,,TRUE,
+h2j,2082,At about what age do adults normally begin to lose bone mass?,dl21_bm25_binary_umbrela_0.3,"[0, 1, 1, 1, 0, 0, 1, 0, 0, 0]",0,1,1,1,0,0,1,0,0,0,"Technical accuracy, Risk of misinformation, Numerical data extraction, Quantitative data"
+,,ANNOTATION:,,,TRUE,,TRUE,TRUE,,,TRUE,,,,
+h2r,914916,what type of tissue are bronchioles,dl20_unicoil_bertscore_umbrela_0.3,"[1, 1, 1, 0, 0, 0, 0, 1, 0, 0]",1,1,1,0,0,0,0,1,0,0,"Up-to-date information, Technical accuracy, Risk of misinformation, Niche topic"
+,,ANNOTATION:,,,TRUE,TRUE,,,TRUE,,,TRUE,,,
+h2g,1115776,what is an aml surveillance analyst,dl19_unicoil_bertscore_umbrela_0.3,"[1, 1, 1, 1, 1, 0, 1, 1, 0, 0]",1,1,1,1,1,0,1,1,0,0,"Up-to-date information, Technical accuracy, Risk of misinformation, Numerical data extraction, Specific product term, Quantitative data, Niche topic"
+,,ANNOTATION:,,,,TRUE,TRUE,TRUE,TRUE,,TRUE,TRUE,,,
+h2r,707882,what is acumen fuse,dl21_distilbert-tas-b_bertscore_umbrela_0.3,"[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]",1,1,1,1,1,1,1,1,1,1,"Up-to-date information, Technical accuracy, Risk of misinformation, Numerical data extraction, Specific product term, Subject ambiguity, Quantitative data, Niche topic, Unrelated query, Missing context"
+,,ANNOTATION:,,,,TRUE,TRUE,,TRUE,TRUE,,TRUE,,TRUE,

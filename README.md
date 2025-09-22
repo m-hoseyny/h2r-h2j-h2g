@@ -17,11 +17,13 @@ paper_repo/
 ├── h2j_judgement_binary.py     # Hard to Judge (Binary) script
 ├── h2j_umbrela_like_llm_judge.py # Hard to Judge (Umbrela-like) script
 ├── pairwise_judge.py           # Pairwise judge evaluation
+├── analyze_human_judgements.py # Analyze human judgements
 ├── bertscore.py                # BERT score evaluation
 ├── find_reasons.py             # Analysis of failure reasons
 ├── bert_score_outputs/         # Outputs from BERT score evaluations
 ├── binary_judge/              # Binary judge evaluation outputs
 ├── conf_matrix/               # Confusion matrix results
+├── human_judgements/           # Human judgements
 ├── datasets/                  # Query datasets and evaluation data
 ├── generated_queries/         # Generated query outputs
 ├── hard_to_retrieve/          # Hard to retrieve query analysis
@@ -178,3 +180,14 @@ python h2j_finder.py
 
 
 LLaMa3.2 Confusion matrixes are available in [here](conf_matrix/readme.md)
+
+
+## Human Annotation
+
+To evaluate the reasons that are tagged by LLMs we use human annotation.
+
+### Binary Hard to Judge
+```bash
+python analyze_human_judgements.py 
+```
+Output directory: ```human_judgements/```
