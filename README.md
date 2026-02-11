@@ -39,10 +39,10 @@ paper_repo/
  
 ### Quantile Threshold
 A statistical measure used to identify hard queries by setting a performance threshold:
-- We use the 0.3 quantile (30th percentile) as our threshold
+- We use the 0.25 quantile (25th percentile) as our threshold
 - Queries with performance below this threshold are considered "hard"
 - This approach allows us to objectively identify challenging queries across different datasets and models
-- The lower band in our tables represents this 0.3 quantile threshold
+- The lower band in our tables represents this 0.25 quantile threshold
 - For each tasks, you can find the script to claculate the quantile
 
 
@@ -84,7 +84,7 @@ pip install -r requirements.txt
 
 ## [Hard to Retrieve](hard_to_retrieve/readme.md)
 
-Queries where retrieval systems struggle to find relevant documents (NDCG@10 below the 0.3 quantile threshold)
+Queries where retrieval systems struggle to find relevant documents (NDCG@10 below the 0.25 quantile threshold)
 
 With this script we can find the hard to retrieve queries for a given run file.
 It returns the quantile threshold for each dataset and save hard queries for each dataset (results below)
@@ -94,26 +94,26 @@ It returns the quantile threshold for each dataset and save hard queries for eac
 python h2r_hard_queries.py \
 --run_file_path hard_to_retrieve/runs/run.msmarco-v2-passage.bm25-default.dl21.txt \
 --qrel_file_path datasets/qrels.dl21-passage.txt \
---quantile 0.3 \
+--quantile 0.25 \
 --output hard_to_retrieve/results/h2r_hard_to_retrieve_dl21.csv
 ```
 
-The table below shows the retrieval performance across different datasets. The lower band represents the 0.3 quantile threshold, which we use to identify hard-to-retrieve queries.
+The table below shows the retrieval performance across different datasets. The lower band represents the 0.25 quantile threshold, which we use to identify hard-to-retrieve queries.
 
-| Dataset | Model | Mean NDCG | Lower Band (0.3 Quantile) |
+| Dataset | Model | Mean NDCG | Lower Band (0.25 Quantile) |
 |---------|-------|-----------|---------------------------|
-| DL19 | BM25 | 0.246 | 0.426 |
-| DL19 | DistilBERT-TAS-B | 0.485 | 0.641 |
-| DL20 | BM25 | 0.223 | 0.365 |
-| DL20 | DistilBERT-TAS-B | 0.518 | 0.616 |
-| DL21 | BM25 | 0.201 | 0.336 |
-| DL21 | DistilBERT-TAS-B | 0.119 | 0.256 |
-| DL22 | BM25 | 0.108 | 0.189 |
-| DL22 | DistilBERT-TAS-B | 0.140 | 0.242 |
+| DL19 | BM25 | 0.217 | 0.381 |
+| DL19 | DistilBERT-TAS-B | 0.457 | 0.631 |
+| DL20 | BM25 | 0.196 | 0.298 |
+| DL20 | DistilBERT-TAS-B | 0.498 | 0.591 |
+| DL21 | BM25 |  0.180 | 0.317 |
+| DL21 | DistilBERT-TAS-B | 0.104 | 0.208 |
+| DL22 | BM25 | 0.093 | 0.161 |
+| DL22 | DistilBERT-TAS-B | 0.127 | 0.202 |
 
 ## [Hard to Generate](generate_passage/readme.md)
 
-Queries where generative models struggle to produce accurate or relevant responses (BERTScore below the 0.3 quantile threshold with the annotated passage in MSMarco[v1,v2])
+Queries where generative models struggle to produce accurate or relevant responses (BERTScore below the 0.25 quantile threshold with the annotated passage in MSMarco[v1,v2])
 
 With this script we can find the hard to generate queries for a given query file.
 
@@ -134,18 +134,18 @@ python bertscore.py \
 ```
 
 
-The table below shows the BERT score F1 values 0.3 quantile threshold for generated content across different datasets using the Qwen3 model:
+The table below shows the BERT score F1 values 0.25 quantile threshold for generated content across different datasets using the Qwen3 model:
 
-| Dataset | Model | BERT Score F1 (0.3 Quantile) |
+| Dataset | Model | BERT Score F1 (0.25 Quantile) |
 |---------|-------|-----------------------------|
-| DL19 | Qwen3.2:8B | 0.825 |
-| DL20 | Qwen3.2:8B | 0.825 |
-| DL21 | Qwen3.2:8B | 0.826 |
-| DL22 | Qwen3.2:8B | 0.818 |
-| DL19 | LLaMa3.2:3b | 0.833 |
-| DL20 | LLaMa3.2:3b | 0.832 |
-| DL21 | LLaMa3.2:3b | 0.838 |
-| DL22 | LLaMa3.2:3b | 0.828 |
+| DL19 | Qwen3.2:8B | 0.823 |
+| DL20 | Qwen3.2:8B | 0.824 |
+| DL21 | Qwen3.2:8B | 0.824 |
+| DL22 | Qwen3.2:8B | 0.816 |
+| DL19 | LLaMa3.2:3b | 0.832 |
+| DL20 | LLaMa3.2:3b | 0.827 |
+| DL21 | LLaMa3.2:3b | 0.836 |
+| DL22 | LLaMa3.2:3b | 0.826 |
 
 You can find the results here: ```bert_score_outputs/```
 
